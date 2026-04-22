@@ -90,5 +90,22 @@ class CalculatorTest {
 
 
     //TODO hier weitere Tests erstellen
+
+
+    @Test
+    @DisplayName("sollte zwei Zahlen korrekt multiplizieren")
+    void testMultiplication() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(3);
+        calc.pressBinaryOperationKey("x");
+        calc.pressDigitKey(4);
+        calc.pressEqualsKey();
+
+        String expected = "12";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
 }
 
